@@ -3,7 +3,7 @@ public class Sorts{
 	public static void bubbleSort(int[] data){
 		int storage = 0;
 		boolean noswap = false;
-		for(int i = data.length; i >= 0; i--){
+		for(int i = data.length; i > 0; i--){
 			if(noswap)
 				break;
 			noswap = true;
