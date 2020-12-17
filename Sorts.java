@@ -21,7 +21,7 @@ public class Sorts{
 	public static void selectionSort(int[] data){
 		int storeval = 0;
 		int storeindex = 0;
-		int min = data[0];
+		int min = 0;
 		for(int i = 0; i < data.length; i++){
 			if(i > 0 && min != data[i - 1]){
 				storeval = data[i - 1];
@@ -42,18 +42,14 @@ public class Sorts{
 		int storage = 0;
 		for(int i = 1; i < data.length; i++){
 			if(data[i] < data[i - 1]){
-				for(int j = i; j >= 0; j--){
-					if(data[j] < data[i]){
-						storage = data[i];
-						for(int k = j; k < i; k++){
-							data[k] = data[k + 1];
-						}
-						data[j] = storage;
-					}
+				storage = data[i];
+				int j = i - 1;
+				while(j >= 0 && data[j] > storage){
+					data[j + 1] = data[j];
+					j--;
 				}
+				data[j + 1] = storage;
 			}
 		}
 	}
-						
-			
 }
